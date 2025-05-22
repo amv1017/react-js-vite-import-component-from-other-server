@@ -1,5 +1,4 @@
-export default ({ createElement, useState }) => {
-  const [count, setCount] = useState(0);
+export default ({ createElement, count, setCount, step }) => {
   const btnStyle = {
     style: {
       padding: "5px 10px",
@@ -16,7 +15,7 @@ export default ({ createElement, useState }) => {
       "button",
       {
         ...btnStyle,
-        onClick: () => setCount((c) => c + 1),
+        onClick: () => setCount((c) => c + step),
       },
       "+"
     ),
@@ -25,7 +24,7 @@ export default ({ createElement, useState }) => {
       "button",
       {
         ...btnStyle,
-        onClick: () => setCount((c) => c - 1),
+        onClick: () => setCount((c) => c - step),
       },
       "-"
     )
